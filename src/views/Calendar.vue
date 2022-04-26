@@ -239,5 +239,7 @@ export default {
 </script>
 
 <style>
-
+.v-text-field{
+      width: 100px;
+}
 </style>
