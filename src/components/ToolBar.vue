@@ -7,7 +7,7 @@
     >
       <v-app-bar-nav-icon @click.stop="drawer = true"></v-app-bar-nav-icon>
         
-      <v-toolbar-title>D➕D➖</v-toolbar-title>
+      <v-toolbar-title @click.stop="$router.push({path:'/'})" style="cursor:pointer">D➕D➖</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -59,6 +59,11 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
+
+          <v-list-item>
+            <v-list-item-title @click.stop="$router.push({path:'/'})">HOME</v-list-item-title>
+          </v-list-item>
+
           <v-list-item>
             <v-list-item-title @click.stop="$router.push({path:'/calendar'})">캘린더</v-list-item-title>
           </v-list-item>
