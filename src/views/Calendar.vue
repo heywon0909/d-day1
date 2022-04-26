@@ -1,6 +1,6 @@
 <template>
   <div>
-        <v-row class="fill-height">
+    <v-row class="fill-height">
     <v-col>
       <v-sheet height="64">
         <v-toolbar
@@ -43,7 +43,7 @@
           <!-- <v-menu
             bottom
             right
-          > -->
+          >
             <template v-slot:activator="{ on, attrs }">
               <v-btn
                 outlined
@@ -52,12 +52,12 @@
                 v-on="on"
               >
                 <span>{{type}}</span>
-                <!-- <v-icon right>
+                <v-icon right>
                   mdi-menu-down
-                </v-icon> -->
+                </v-icon>
               </v-btn>
             </template>
-            <!-- <v-list>
+            <v-list>
               <v-list-item @click="type = 'day'">
                 <v-list-item-title>Day</v-list-item-title>
               </v-list-item>
@@ -70,11 +70,11 @@
               <v-list-item @click="type = '4day'">
                 <v-list-item-title>4 days</v-list-item-title>
               </v-list-item>
-            </v-list> -->
-          <!-- </v-menu> -->
+            </v-list>
+          </v-menu> -->
         </v-toolbar>
       </v-sheet>
-      <v-sheet height="600">
+      <v-sheet height="787">
         <v-calendar
           ref="calendar"
           v-model="focus"
@@ -87,6 +87,18 @@
           @click:date="viewDay"
           @change="updateRange"
         ></v-calendar>
+        <template>
+             <v-col
+          cols="12"
+          sm="6"
+          md="3"
+        >
+          <v-text-field
+            label="Solo"
+            solo
+          ></v-text-field>
+        </v-col>
+        </template>
         <v-menu
           v-model="selectedOpen"
           :close-on-content-click="false"
@@ -138,6 +150,7 @@
 export default {
     data: () => ({
       focus: '',
+      inputOn:false,
       type: 'month',
       typeToLabel: {
         month: 'Month',
@@ -156,9 +169,9 @@ export default {
       this.$refs.calendar.checkChange()
     },
     methods: {
-      viewDay ({ date }) {
+      viewDay ({ date,nativeEvent }) {
           console.log(date);
-
+          console.log(nativeEvent);
         // this.focus = date
         // this.type = 'day'
       },
@@ -176,6 +189,7 @@ export default {
       },
       showEvent ({ nativeEvent, event }) {
         const open = () => {
+            console.log(nativeEvent);
           this.selectedEvent = event
           this.selectedElement = nativeEvent.target
           requestAnimationFrame(() => requestAnimationFrame(() => this.selectedOpen = true))
