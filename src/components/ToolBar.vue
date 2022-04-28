@@ -61,23 +61,23 @@
         >
 
           <v-list-item>
-            <v-list-item-title @click.stop="$router.push({path:'/'})">HOME</v-list-item-title>
+            <v-list-item-title @click="$router.push({path:'/'})">HOME</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title @click.stop="$router.push({path:'/calendar'})">캘린더</v-list-item-title>
+            <v-list-item-title @click="$router.push({path:'/calendar'})">캘린더</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title @click.stop="$router.push({path:'/schedule'})">일정 모아보기</v-list-item-title>
+            <v-list-item-title @click="$router.push({path:'/schedule'})">일정 모아보기</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title @click.stop="$router.push({path:'/setting'})">설정</v-list-item-title>
+            <v-list-item-title @click="$router.push({path:'/setting'})">설정</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title>공지사항</v-list-item-title>
+            <v-list-item-title @click="$router.push({path:'/board'})">공지사항</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
       </v-list>

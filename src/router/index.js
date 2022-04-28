@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Calendar from '../views/Calendar.vue'
 import Setting from '../views/Setting.vue'
 import Schedule from '../views/Schedule.vue'
+import Board from '../views/Board.vue'
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,11 @@ const router = new VueRouter({
             path: '/schedule',
             name: 'schedule',
             component:Schedule
+        },
+         {
+            path: '/board',
+            name: 'board',
+            component: Board
         }
     ]
 });
