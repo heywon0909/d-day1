@@ -2,6 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue'
 import Calendar from '../views/Calendar.vue'
+import Setting from '../views/Setting.vue'
+import Schedule from '../views/Schedule.vue'
 
 Vue.use(VueRouter);
 
@@ -18,6 +20,16 @@ const router = new VueRouter({
             path:'/calendar',
             name:'Calendar',
             component:Calendar
+        },
+        {
+            path: '/setting',
+            name: 'Setting',
+            component:Setting
+        },
+        {
+            path: '/schedule',
+            name: 'schedule',
+            component:Schedule
         }
     ]
 });

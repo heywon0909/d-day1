@@ -87,18 +87,6 @@
           @click:date="viewDay"
           @change="updateRange"
         ></v-calendar>
-        <template>
-             <v-col
-          cols="12"
-          sm="6"
-          md="3"
-        >
-          <v-text-field
-            label="Solo"
-            solo
-          ></v-text-field>
-        </v-col>
-        </template>
         <v-menu
           v-model="selectedOpen"
           :close-on-content-click="false"
@@ -143,12 +131,16 @@
       </v-sheet>
     </v-col>
   </v-row>
+  <add-list-modal :dialog="dialog"/>
   </div>
 </template>
 
 <script>
+import AddListModal from '../components/AddListModal.vue';
 export default {
+  components: { AddListModal },
     data: () => ({
+      dialog:false,
       focus: '',
       inputOn:false,
       type: 'month',
@@ -157,6 +149,9 @@ export default {
         week: 'Week',
         day: 'Day',
         '4day': '4 Days',
+      },
+      components:{
+          AddListModal
       },
       selectedEvent: {},
       selectedElement: null,
@@ -172,6 +167,7 @@ export default {
       viewDay ({ date,nativeEvent }) {
           console.log(date);
           console.log(nativeEvent);
+          this.dialog = true;
         // this.focus = date
         // this.type = 'day'
       },

@@ -69,11 +69,11 @@
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title>일정 모아보기</v-list-item-title>
+            <v-list-item-title @click.stop="$router.push({path:'/schedule'})">일정 모아보기</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
-            <v-list-item-title>설정</v-list-item-title>
+            <v-list-item-title @click.stop="$router.push({path:'/setting'})">설정</v-list-item-title>
           </v-list-item>
 
           <v-list-item>
